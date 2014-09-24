@@ -1,0 +1,81 @@
+.home-section {
+    position:relative;
+    background:#000;
+    color:@text-color-inverse;
+    background:url(/assets/bg-home.jpg);
+    .background-size(cover);
+    z-index:0;
+    .overlay {
+        z-index:-1;
+        content: '';
+        display:block;
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background:url(/assets/overlay.png);
+    }
+    h1{
+        text-transform: uppercase;
+        padding:20px 0 0;
+        margin:0;
+        .font(serif);
+        font-weight:800;
+        letter-spacing:10px;
+        span{
+            color: @brand-primary;
+        }
+    }
+    .info, .description, h1{
+        text-align:left;
+    }
+    .info, .description{
+        font-size:1.15em;
+        font-weight:bold;
+        text-shadow: 1px 1px rgba(0,0,0,.8);
+        letter-spacing:.2em;
+    }
+    .info a{
+        color:@text-color-inverse;
+        &:hover{
+            color:@brand-primary;
+            text-decoration:none;
+        }
+    }
+    .description{
+        /*padding-top:60px;*/
+        text-transform:uppercase;
+    }
+    .introduction{
+        border-radius: @border-radius-base;
+        background:rgba(0,0,0,.6);
+        padding-top:@padding-base-vertical;
+        padding-bottom:@padding-base-vertical;
+    }
+}
+
+@media(max-width: @screen-xs-max){
+    .home-section h1{
+        font-size:40px;
+        line-height:40px;
+    }
+}
+@media(min-width: @screen-tablet){
+    .home-section h1{
+        font-size:60px;
+        line-height:60px;
+    }
+}
+@media(min-width: @screen-desktop){
+    .home-section h1{
+        font-size:80px;
+        line-height:80px;
+    }
+}
+@media(min-width: @screen-lg-desktop){
+    .home-section h1{
+        font-size:100px;
+        line-height:100px;
+    }
+}

@@ -1,0 +1,37 @@
+@footer-color: @gray-light;
+@footer-link-color: @gray-lighter;
+
+.footer{
+    padding:@padding-large-vertical 0;
+    background:@gray-darker;
+    color:@footer-color;
+    font-size:.85em;
+    .left{
+        padding-top:1em;
+    }
+    .right{
+        text-align:left;
+    }
+    .social-links{
+        list-style-type:none;
+        li{
+            display:inline-block;
+            margin-left:1em;
+        }
+        .icon-github{
+            font-size:1.25em;
+        }
+    }
+    a{
+        color:@footer-link-color;
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}
+
+@media(min-width: @screen-tablet){
+    .footer .right{
+        text-align:right;
+    }
+}

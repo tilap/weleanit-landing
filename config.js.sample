@@ -1,0 +1,138 @@
+var root = __dirname,
+    // Allow to fast switch between projects by changing just that var
+    src = 'src';
+
+module.exports = {
+    server: {
+        port: 4000
+    },
+    livereload: {
+        port: 4002
+    },
+    paths: {
+        export: '',
+        less: {
+            src: root + '/' + src+ '/stylesheet',
+            tmp: root + '/tmp/stylesheet',
+            dist: root + '/dist/stylesheet'
+        },
+        js: {
+            src: root + '/' + src + '/js',
+            tmp: root + '/tmp/js',
+            dist: root + '/dist/js'
+        },
+        fonts: {
+            src: root + '/' + src + '/fonts',
+            dist: root + '/dist/fonts'
+        },
+        html: {
+            src: root + '/' + src + '/html',
+            dist: root + '/dist/'
+        },
+        assets: {
+            src: root + '/' + src + '/assets',
+            dist: root + '/dist/assets'
+        }
+    },
+    style: {
+        linter: {
+            // see https://github.com/sindresorhus/gulp-recess
+            options: {
+                includePath: ['vendor'],
+                strictPropertyOrder: true,
+                noIDs: true,
+                noJSPrefix: true,
+                noOverqualifying: true,
+                noUnderscores: true,
+                noUniversalSelectors: true,
+                zeroUnits: true,
+            }
+        },
+        compilation: {
+            less: {
+                // see http://lesscss.org/usage/#command-line-usage
+                // note: no sourcemap according to https://github.com/plus3network/gulp-less
+                options: {
+                    compress: true,
+                    cleancss: true,
+                    strictImports: true,
+                    strictUnits: true,
+                    strictMath: false,
+                    sourceMap: true,
+                    globalVar: '',
+                    modifyVars: {},
+                    paths: ['vendor']
+                }
+            },
+        }
+    },
+    js: {
+        linter:{
+            // See http://jshint.com/docs
+            options: {}
+        },
+        compilation: {
+            // See https://www.npmjs.org/package/gulp-browserify
+            browserify: {
+                enabled: true,
+                options: {}
+            },
+            concat: {
+                enabled: true,
+                filename: 'bundle.js'
+            },
+            uglify: {
+                enabled: true,
+                // See https://github.com/terinjokes/gulp-uglify
+                options: {
+                    compress: true,
+                    preserveComments: 'some'
+                }
+            }
+        }
+    },
+    html: {
+        linter: {
+            // See https://github.com/yaniswang/HTMLHint/wiki/Rules
+            options: {
+                'tagname-lowercase': true,
+                'attr-lowercase': true,
+                'attr-value-double-quotes': true,
+                'attr-value-not-empty': true,
+                'attr-no-duplication': true,
+                'doctype-first': true,
+                'tag-pair': true,
+                'tag-self-close': true,
+                'spec-char-escape': true,
+                'id-unique': true,
+                'src-not-empty': true,
+                'head-script-disabled': false,
+                'img-alt-require': true,
+                'doctype-html5': true,
+                'id-class-value': false,
+                'style-disabled': true,
+                'space-tab-mixed-disabled': false,
+                'id-class-ad-disabled': false,
+                'href-abs-or-rel': false,
+                'attr-unsafe-chars': false,
+                'csslint': false,
+                'jshint': false
+            }
+        },
+        compilation: {
+            htmlmin: {
+                enabled: true,
+                // See https://github.com/kangax/html-minifier#options-quick-reference
+                options: {
+                    collapseWhitespace: true,
+                    conservativeCollapse: true
+                }
+            }
+        }
+    },
+    assets: {
+        images: {
+            compression: 5
+        }
+    }
+};

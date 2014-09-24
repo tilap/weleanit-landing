@@ -1,0 +1,59 @@
+// Config
+@import (reference) "config/colors.less";
+@import (reference) "config/fonts.less";
+@import (reference) "config/bootstrap.less";
+
+
+// Vendors
+@import "inc/bootstrap.less";
+
+// Libraries
+@import (reference) "lib/mixins.less";
+@import (reference) "lib/fonts.less";
+
+// Common styling - small overide of bootstrap and other stuff
+body, html{
+    min-height:100%;
+}
+body{
+    font-weight:200;
+}
+a{
+    .transition(color .15s, background .15s, border .15s;);
+}
+
+.btn-primary-outlined {
+    &:extend(.btn-primary);
+    background:transparent;
+    color:@brand-primary;
+    &:hover{
+        color: lighten(@brand-primary, 10%);
+        border-color: lighten(@brand-primary, 10%);
+    }
+}
+
+// Tooltipster
+.tooltipster-welean {
+    border-radius: @border-radius-base;
+    border: none;
+    background: @brand-primary;
+    color: #fff;
+}
+.tooltipster-welean .tooltipster-content {
+    .font(sans);
+    font-size: 13px;
+    line-height: 15px;
+    padding: 8px 12px;
+}
+
+// Layout
+@import "layout/navbar.less";
+@import 'layout/footer.less';
+
+// Sections
+@import 'sections/all.less';
+@import 'sections/home.less';
+@import 'sections/idea.less';
+@import 'sections/concept.less';
+@import 'sections/editions.less';
+@import 'sections/contact.less';

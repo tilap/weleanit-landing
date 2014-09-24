@@ -1,0 +1,18 @@
+.section-title{
+    &:extend(.h2);
+    font-size:40px;
+    margin-top:0;
+    .font(serif);
+    &:after{
+        content: '.';
+        display:inline;
+        color: @brand-primary;
+        .font(serif);
+    }
+}
+
+@media(min-width: @screen-tablet){
+    .section-title{
+        font-size:60px;
+    }
+}

@@ -1,0 +1,57 @@
+.editions-section{
+    padding:@navbar-height * 1.5 0;
+    z-index:0;
+    position:relative;
+    .overlay {
+        z-index:-1;
+        content: '';
+        display:block;
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:38%;
+        background:rgba(255,255,255,.7);
+    }
+
+    ul.main{
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        > li {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1em;
+            font-style:italic;
+            > ul{
+                padding-top: .5em;
+                font-style:normal;
+            }
+        }
+        strong{
+            font-style:normal;
+            display: inline-block;
+            font-weight:300;
+            background:@brand-primary;
+            color:#fff;
+            border-radius: 2em;
+            height:2em;
+            padding:0 1em;
+            text-align:center;
+            line-height:2em;
+        }
+    }
+}
+
+@media(max-width: @screen-xs-max){
+    .editions-section ul.main strong{
+        display:block;
+        margin-bottom:.3em;
+    }
+}
+@media(min-width: @screen-tablet){
+    .editions-section{
+        background: url(/assets/coffee.jpg) bottom center no-repeat;
+        .background-size(cover);
+    }
+}

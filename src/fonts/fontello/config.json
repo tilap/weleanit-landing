@@ -1,0 +1,22 @@
+{
+  "name": "gulppage",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "8669af50382b53c48b9b803692828dd0",
+      "css": "github",
+      "code": 59393,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "b1ec8e90c2c85cf0035849980a3789b3",
+      "css": "twitter",
+      "code": 59392,
+      "src": "zocial"
+    }
+  ]
+}

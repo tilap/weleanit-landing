@@ -1,0 +1,10 @@
+{
+  "name": "welean",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "3.2.x",
+    "modernizr": "2.8.3",
+    "jQuery-One-Page-Nav": "3.0.x",
+    "tooltipster": "3.2.x"
+  }
+}

@@ -1,0 +1,34 @@
+.navbar{
+    margin-top:-1 * @navbar-height;
+    .transition(margin .3s;);
+    border:none;
+    .navbar-brand{
+        display:none;
+    }
+    &.navbar-fixed-top{
+        margin-top:0;
+        .navbar-brand{
+            display:block;
+            .font(serif);
+            span{
+                color: @brand-primary;
+            }
+        }
+        li.social {
+            display:block;
+        }
+    }
+    &.navbar-default li a:hover {
+        text-decoration:underline;
+    }
+    li.social {
+        display:none;
+        a{
+            padding-left:@navbar-padding-horizontal/2;
+            padding-right:@navbar-padding-horizontal/2;
+        }
+        .icon-github{
+            font-size:1.3em;
+        }
+    }
+}
