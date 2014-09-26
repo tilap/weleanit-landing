@@ -22,13 +22,26 @@ a{
     .transition(color .15s, background .15s, border .15s;);
 }
 
+.btn-primary{
+    text-decoration:none;
+}
 .btn-primary-outlined {
+    .btn-primary-outlined-gen(@brand-primary);
+}
+.btn-primary-outlined-white {
+    .btn-primary-outlined-gen(#eee);
+}
+
+.btn-primary-outlined-gen(@color) {
     &:extend(.btn-primary);
+    text-decoration:none;
     background:transparent;
-    color:@brand-primary;
+    color:@color;
+    border-color: @color;
     &:hover{
-        color: lighten(@brand-primary, 10%);
-        border-color: lighten(@brand-primary, 10%);
+        color: lighten(@color, 10%);
+        border-color: lighten(@color, 10%);
+        text-decoration:none;
     }
 }
 
